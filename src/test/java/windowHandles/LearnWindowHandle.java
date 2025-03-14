@@ -38,7 +38,8 @@ public class LearnWindowHandle {
 		
 		
 		///dealing with multiple tabs
-	/*	Page multiTab=page.waitForPopup(new page.WaitForPopupOptions()->
+		Page multiTab=page.waitForPopup(new Page.WaitForPopupOptions()
+				.setPredicate(p->p.context().pages().size()==3),()->
 		{
 			page.getByAltText("Follow By").click();
 			
@@ -47,8 +48,9 @@ public class LearnWindowHandle {
 		System.out.println(countTab.size());
 		countTab.forEach(Tabs->
 		{
+			Tabs.waitForLoadState();
 			System.out.println(Tabs.title());
-		});*/
+		});
 		
 		
 		
