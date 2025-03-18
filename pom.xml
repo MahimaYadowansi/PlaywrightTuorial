@@ -26,6 +26,15 @@
     <version>3.24.2</version>
     <scope>test</scope>
 </dependency>
+
+    <!-- TestNG Dependency -->
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>7.7.1</version>  <!-- Use the latest stable version -->
+        <scope>test</scope>
+    </dependency>
+
 		
 	</dependencies>
 	
@@ -41,5 +50,31 @@
             </plugins>
         </pluginManagement>
     </build>
-
+<!-- for playwright inspector-->
+<profiles>
+	  <profile>
+			<id>debug</id>
+			<build>
+				<plugins>
+					<plugin>
+						<!-- https://mvnrepository.com/artifact/org.codehaus.mojo/exec-maven-plugin -->
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>exec-maven-plugin</artifactId>
+						<version>3.0.0</version>
+						<executions>
+							<execution>
+								<phase>test</phase>
+								<goals>
+									<goal>java</goal>
+								</goals>
+								<configuration>
+									<mainClass>playwightInspector.LearnPlaywrightInspector</mainClass>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+  </profiles>
 </project>
