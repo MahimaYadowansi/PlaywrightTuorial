@@ -5,13 +5,13 @@
 	<groupId>lambdaTestPlaywright</groupId>
 	<artifactId>LambdaTestPlaywright</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
-	
+
+
 	<properties>
-    <maven.compiler.source>21</maven.compiler.source>
-    <maven.compiler.target>21</maven.compiler.target>
-</properties>
-	
+		<maven.compiler.source>21</maven.compiler.source>
+		<maven.compiler.target>21</maven.compiler.target>
+	</properties>
+
 	<dependencies>
 		<!--
 		https://mvnrepository.com/artifact/com.microsoft.playwright/playwright -->
@@ -21,43 +21,54 @@
 			<version>1.50.0</version>
 		</dependency>
 		<dependency>
-    <groupId>org.assertj</groupId>
-    <artifactId>assertj-core</artifactId>
-    <version>3.24.2</version>
-    <scope>test</scope>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>3.24.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.20.0</version>
+		</dependency>
+<dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.8.9</version>
 </dependency>
 
-    <!-- TestNG Dependency -->
-    <dependency>
-        <groupId>org.testng</groupId>
-        <artifactId>testng</artifactId>
-        <version>7.7.1</version>  <!-- Use the latest stable version -->
-        <scope>test</scope>
-    </dependency>
+		<!-- TestNG Dependency -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.7.1</version>  <!-- Use the latest stable version -->
+			<scope>test</scope>
+		</dependency>
 
-		
+
 	</dependencies>
-	
-	
-	 <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.1</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
-<!-- for playwright inspector-->
-<profiles>
-	  <profile>
+
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.8.1</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	<!-- for playwright inspector-->
+	<profiles>
+		<profile>
 			<id>debug</id>
 			<build>
 				<plugins>
 					<plugin>
-						<!-- https://mvnrepository.com/artifact/org.codehaus.mojo/exec-maven-plugin -->
+						<!--
+						https://mvnrepository.com/artifact/org.codehaus.mojo/exec-maven-plugin -->
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>exec-maven-plugin</artifactId>
 						<version>3.0.0</version>
@@ -68,7 +79,8 @@
 									<goal>java</goal>
 								</goals>
 								<configuration>
-									<mainClass>playwightInspector.LearnPlaywrightInspector</mainClass>
+									<mainClass>
+										playwightInspector.LearnPlaywrightInspector</mainClass>
 								</configuration>
 							</execution>
 						</executions>
@@ -76,5 +88,5 @@
 				</plugins>
 			</build>
 		</profile>
-  </profiles>
+	</profiles>
 </project>
