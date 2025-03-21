@@ -6,4 +6,10 @@
       <class name="runningOnCloud.TestNGDemoTest"/>
     </classes>
   </test> <!-- Test -->
+  <test  name=" Page Object Model Test">
+    <classes>
+      <class name="pomTests.LoginTest"/>
+      <class name="pomTests.RegistrationTest"/>
+    </classes>
+  </test> <!-- Test -->
 </suite> <!-- Suite -->
